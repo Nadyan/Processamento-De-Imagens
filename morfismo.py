@@ -8,16 +8,16 @@ pil2 = Image.open('angry.jpg')
 (l2, h2) = pil2.size
 
 print("Conferindo dimensoes...")
-if l1 != l2 or h1 != h2: #confere se as duas imagens possuem a mesma dimensao
+if l1 != l2 or h1 != h2:                                         #confere se as duas imagens possuem a mesma dimensao
     pint("ERRO! Imagens de dimensoes diferentes!")
     print(l1, h1)
     print(l2, h2)
     exit()
 
-(l, h) = (l1, h1) #atribui a dimensao da imagem de saida
+(l, h) = (l1, h1)                                                #atribui a dimensao da imagem de saida
 
-u1 = 0.4 #parametro para interpolacao da imagem 1
-u2 = 0.8 #parametro para interpolacao da imagem 2
+u1 = 0.4                                                         #parametro para interpolacao da imagem 1
+u2 = 0.8                                                         #parametro para interpolacao da imagem 2
 
 out1 = Image.new(pil1.mode, (l, h))
 out2 = Image.new(pil1.mode, (l, h))
