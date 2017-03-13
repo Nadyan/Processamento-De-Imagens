@@ -1,23 +1,23 @@
 from PIL import Image
 
 print("Abrindo Imagens...")
-pil1 = Image.open('happy.jpg')
-pil2 = Image.open('angry.jpg')
+pil1 = Image.open('walt1.jpeg')                                  # primeira imagem da sequencia
+pil2 = Image.open('walt4.jpeg')                                  # quarta imagem da sequencia
 
 (l1, h1) = pil1.size
 (l2, h2) = pil2.size
 
 print("Conferindo dimensoes...")
-if l1 != l2 or h1 != h2:                                         #confere se as duas imagens possuem a mesma dimensao
+if l1 != l2 or h1 != h2:                                         # confere se as duas imagens possuem a mesma dimensao
     pint("ERRO! Imagens de dimensoes diferentes!")
     print(l1, h1)
     print(l2, h2)
     exit()
 
-(l, h) = (l1, h1)                                                #atribui a dimensao da imagem de saida
+(l, h) = (l1, h1)                                                # atribui a dimensao da imagem de saida
 
-u1 = 0.4                                                         #parametro para interpolacao da imagem 1
-u2 = 0.8                                                         #parametro para interpolacao da imagem 2
+u1 = 0.4                                                         # parametro para interpolacao da imagem 1
+u2 = 0.8                                                         # parametro para interpolacao da imagem 2
 
 out1 = Image.new(pil1.mode, (l, h))
 out2 = Image.new(pil1.mode, (l, h))
@@ -42,7 +42,7 @@ for j in range(0, h):
         out2.putpixel((i, j), u)                                 # insere os pixels interpolados na imagem2
 
 #out.show()
-out1.save("outMorph1.jpg", "JPEG")
-out2.save("outMorph2.jpg", "JPEG")
+out1.save("walt2.jpg", "JPEG")                                   # segunda imagem da sequencia
+out2.save("walt3.jpg", "JPEG")                                   # terceira imagem da sequencia
 
-print("Pronto! Arquivos de saida: outMorph1.jpg e outMorph2.jpg")
+print("Pronto! Arquivos de saida: walt2.jpg e walt3.jpg")
