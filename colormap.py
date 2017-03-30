@@ -24,7 +24,7 @@ M = np.reshape(M,(256,3))
 
 #print(M)
 
-im = Image.open('pimentao.jpg')
+im = Image.open('mapaEUA.jpg')
 out = Image.new("RGB", im.size)
 height,width = im.size
 
@@ -33,8 +33,10 @@ for i in range(0,height):
 		pixel = im.getpixel((i,j))
 		out.putpixel((i,j), (M[pixel][0], M[pixel][1], M[pixel][2]))
 
-out.save("pseudoCorOutPimentao2.jpg", "JPEG")
+out.save("pseudoCorOutEUA2.jpg", "JPEG")
 
+
+# histograma:
 gray_img = cv2.imread('mapaEUA.png', cv2.IMREAD_GRAYSCALE)
 cv2.imshow('GoldenGate',gray_img)
 hist = cv2.calcHist([gray_img],[0],None,[256],[0,256])
