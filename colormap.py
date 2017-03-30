@@ -33,17 +33,16 @@ for i in range(0,height):
 		pixel = im.getpixel((i,j))
 		out.putpixel((i,j), (M[pixel][0], M[pixel][1], M[pixel][2]))
 
-out.save("pseudoCorOutEUA2.jpg", "JPEG")
+out.save("pseudoCorOutEUA.jpg", "JPEG")
 
 
 # histograma:
-# pip install opencv
+# pip install opencv-python
 gray_img = cv2.imread('mapaEUA.jpg', cv2.IMREAD_GRAYSCALE)
-cv2.imshow('GoldenGate',gray_img)
+#cv2.imshow('GoldenGate',gray_img)
 hist = cv2.calcHist([gray_img],[0],None,[256],[0,256])
 plt.hist(gray_img.ravel(),256,[0,256])
-plt.title('Histograma para escala de cinza')
-#plt.show()
-plt.save("HistogramaMapa", "JPEG")
+plt.title('Histograma para escala de cinza mapaEUA.jpg')
+plt.show()
 		
 
