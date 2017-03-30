@@ -37,11 +37,13 @@ out.save("pseudoCorOutEUA2.jpg", "JPEG")
 
 
 # histograma:
-gray_img = cv2.imread('mapaEUA.png', cv2.IMREAD_GRAYSCALE)
+# pip install opencv
+gray_img = cv2.imread('mapaEUA.jpg', cv2.IMREAD_GRAYSCALE)
 cv2.imshow('GoldenGate',gray_img)
 hist = cv2.calcHist([gray_img],[0],None,[256],[0,256])
 plt.hist(gray_img.ravel(),256,[0,256])
-plt.title('Histogram for gray scale picture')
-plt.show()
+plt.title('Histograma para escala de cinza')
+#plt.show()
+plt.save("HistogramaMapa", "JPEG")
 		
 
