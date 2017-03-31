@@ -33,7 +33,7 @@ for i in range(0,height):
 		pixel = im.getpixel((i,j))
 		out.putpixel((i,j), (M[pixel][0], M[pixel][1], M[pixel][2]))
 
-out.save("pseudoCorOutEUA.jpg", "JPEG")
+out.save("mapaEUAOut.jpg", "JPEG")
 
 
 # histograma:
