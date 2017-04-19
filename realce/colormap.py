@@ -21,14 +21,14 @@ M = np.asarray(m)
 M = np.reshape(M,(256,3))
 
 im = Image.open('aorta1.jpg')
-backtorgb = cv2.cvtColor(im,cv2.COLOR_GRAY2RGB) # converte grayscale em RGB (testar)
+imrgb = cv2.cvtColor(im,cv2.COLOR_GRAY2RGB) # converte grayscale em RGB (testar)
 
 out = Image.new("RGB", im.size)
 height,width = im.size
 
 for i in range(0,height):
 	for j in range(0,width):
-		pixel = im.getpixel((i,j))
+		pixel = imrgb.getpixel((i,j))
 		out.putpixel((i,j), (M[pixel][0], M[pixel][1], M[pixel][2])) # IndexError: index 82 is out of bounds for axis 1 with size 3 (WHYYYYYYYYYYY?)
 
 out.save("aorta1_Out.jpg", "JPEG")
