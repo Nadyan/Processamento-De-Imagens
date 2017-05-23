@@ -27,6 +27,7 @@ def hough_line(img):
     for t_idx in range(num_thetas):
       # Calculate rho. diag_len is added for a positive index
       rho = round(x * cos_t[t_idx] + y * sin_t[t_idx]) + diag_len
+      #rho = np.int(rho) ?
       accumulator[rho, t_idx] += 1
 
   return accumulator, thetas, rhos
@@ -42,3 +43,7 @@ idx = np.argmax(accumulator)
 rho = rhos[idx / accumulator.shape[1]]
 theta = thetas[idx % accumulator.shape[1]]
 print "rho={0:.2f}, theta={1:.0f}".format(rho, np.rad2deg(theta))
+
+#transoformar diag_len em int
+	# diag_len = np.int(diag_len)
+	# rho = np.int(rho)
