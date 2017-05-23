@@ -1,0 +1,4 @@
+T4 PIM: Tranformada de hough para segmentos de reta + transformada de fourrier
+
+sequencia:
+	Imagem -> Operador (Realçador Canny) -> Imagem Binária -> Transformada de hough

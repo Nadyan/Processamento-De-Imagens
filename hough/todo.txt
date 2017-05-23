@@ -1,0 +1,7 @@
+T4 PIM: Tranformada de hough para segmentos de reta + transformada de fourrier
+
+sequencia:
+	Imagem -> Operador (Realçador Canny) -> Imagem Binária -> Transformada de hough
+		- canny tem na numpy ou pil
+
+https://l.facebook.com/l.php?u=http%3A%2F%2Fopencv-python-tutroals.readthedocs.io%2Fen%2Flatest%2Fpy_tutorials%2Fpy_imgproc%2Fpy_houghlines%2Fpy_houghlines.html&h=ATOWOfbXj9rmO2Azv22csnRm_0lUZGg2m1y_xylfNYSgB2mRY3P30ckEQLH-th4TE1o6A0JKBBy0IkzW_T8ZdtL2jrax-PvdY1_MPpBpXfUcdDy6ioLVNwrNOLKJDzbuZ0H1Kg
