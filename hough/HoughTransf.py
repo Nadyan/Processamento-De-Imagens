@@ -1,6 +1,12 @@
 #
 # FONTE: https://alyssaq.github.io/2014/understanding-hough-transform/
 #
+# Depois que faz o fourrier (f = np.fft.fft2(img)), com o retorno faz fshift = np.fft.fftshift(f)
+# np.fft.fftshift() shift eh o espectro
+#
+# Sequencia:
+#    hough -> accumulator -> fft.fft2 -> fft.fshift -> espectro
+
 import numpy as np
 
 def hough_line(img):
@@ -8,6 +14,7 @@ def hough_line(img):
   thetas = np.deg2rad(np.arange(-90.0, 90.0))
   width, height = img.shape
   diag_len = np.ceil(np.sqrt(width * width + height * height))   # max_dist
+  diag_len = np.int(diag_len)
   rhos = np.linspace(-diag_len, diag_len, diag_len * 2.0)
 
   # Cache some resuable values
@@ -27,7 +34,7 @@ def hough_line(img):
     for t_idx in range(num_thetas):
       # Calculate rho. diag_len is added for a positive index
       rho = round(x * cos_t[t_idx] + y * sin_t[t_idx]) + diag_len
-      #rho = np.int(rho) ?
+      rho = np.int(rho)
       accumulator[rho, t_idx] += 1
 
   return accumulator, thetas, rhos
@@ -44,6 +51,3 @@ rho = rhos[idx / accumulator.shape[1]]
 theta = thetas[idx % accumulator.shape[1]]
 print "rho={0:.2f}, theta={1:.0f}".format(rho, np.rad2deg(theta))
 
-#transoformar diag_len em int
-	# diag_len = np.int(diag_len)
-	# rho = np.int(rho)
